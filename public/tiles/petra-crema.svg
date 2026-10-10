@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <filter id="stone" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.006 0.018" numOctaves="5" seed="7" result="noise"/>
+    <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.62  0 0 0 0 0.53  0 0 0 0 0.40  0 0 0 -2.2 1.35" result="veins"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.06 0" result="grainA"/>
+    <feMerge><feMergeNode in="veins"/><feMergeNode in="grainA"/></feMerge>
+  </filter>
+  <rect width="600" height="600" fill="#E8DCC8"/>
+  <rect width="600" height="600" filter="url(#stone)" opacity="0.55"/>
+</svg>
